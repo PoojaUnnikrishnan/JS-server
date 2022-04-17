@@ -5,5 +5,7 @@ app.get("/", function (req, res) {
   //to get a response
   res.send("Hello World..!!"); //this sends "hello world" message
 });
-
-app.listen(3000, console.log("server is running on port 3000")); //local host is given as 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+  console.log(`listening to port ${PORT}`);
+}); //local host is given as 3000
